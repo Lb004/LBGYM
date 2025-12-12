@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --blue: #00afb9;
+  --black: #0a0a0a;
+  --gray: #808080;
+  --orange: #f07167;
+  --lobster-two: "Lobster Two", cursive;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/*header*/
+header {
+  background-color: var(--blue);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+/*estilos al logo lbgym*/
+header .logo {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: #f5f5f5;
+}
+
+header .logo i {
+  font-size: 1.35;
+  margin-left: 0.2em;
+}
+
+header .logo span {
+  font-size: 400;
+  font-style: italic;
+}
+
+/* barra de navegacion */
+header nav {
+  position: absolute;
+  top: 3.5em;
+  right: 1em;
+  background-color: var(--black);
+  border-radius: 5px;
+  width: 75%;
+  max-width: 400px;
+  display: none; /*desaparece la barra */
+}
+
+header nav a {
+  display: block;
+  color: var(--blue);
+  letter-spacing: 0.08em;
+  padding: 0.95em 0;
+  text-align: center;
+  border-bottom: 1px solid var(--blue);
+}
+
+/* lo que hace es que al momento de pasar el mouse se muestre de color blue*/
+header nav a:hover {
+  color: var(--black);
+  background-color: var(--blue);
+}
+
+/* estilos al icono del nav*/
+#menu-icon {
+  padding: 10px;
+  font-size: 1.25em;
+  cursor: pointer;
+  color: #f5f5f5;
+}
+
+.active {
+  display: block;
+}
+
+.menu-active {
+  background-color: var(--black);
+  border-radius: 0.1em;
+}
+
+@media only screen and (min-width: 720px) {
+  header .logo {
+    flex: 1 1 30em;
+  }
+
+  header nav {
+    display: flex;
+    flex: 1 1 15em;
+    align-items: center;
+    background-color: transparent;
+    position: unset;
+    max-width: none;
+  } /*solamente si acercamos el raton a la parte del menu, aparece las letras*/
+
+  header nav a {
+    padding: 0;
+    margin-left: 0.8em;
+    color: #f5f5f5;
+    font-size: medium;
+    font-weight: 700;
+    transition: 0.2s ease-in-out;
+  } /*ahora con esto, aparece el menu, pero si lo achicamos aparece el logo del menu */
+
+  header nav a:hover {
+    color: var(--orange);
+    padding: 0.2em;
+    border-bottom: 2px solid var(--orange);
+    /* cuando acercamos el raton al menu se pone color naranja*/
+  }
+
+  #menu-icon {
+    display: none;
+  }
+} /* cada vez que se abra mas la pestana, desaparece el menu
+
+/*inicio*/
+#inicio {
+  height: calc(100vh - 3.5em);
+  background: linear-gradient(0, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/home.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#inicio .text {
+  color: #f5f5f5;
+  padding: 2.5em;
+}
+
+#inicio .text h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75em;
+}
+
+.btn {
+  background-color: var(--orange);
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 0.2em;
+  color: #f5f5f5;
+  font-size: 0.9em;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #f5f5f5;
+  color: var(--orange);
+  transition: 0.2s ease-in;
+}
+
+/* nosotros */
+nosotros {
+  background-color: #f5f5f5;
+  padding-bottom: 2.5em;
+}
+
+.title {
+  font-size: 1.6em;
+  text-align: center;
+  padding: 0.75em 0;
+  font-style: italic;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#nosotros .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5em;
+}
+
+#nosotros .row .left-box-image {
+  flex: 1 1 20em;
+  width: 80%;
+  background-image: url(../img/nosotros.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0.8em 0 2.5em 0;
+}
+
+#nosotros .row .right-box {
+  flex: 1 1 20em;
+  padding: 1em 0 2em 1.5em;
+}
+
+#nosotros .row .right-box h3 {
+  padding: 0.8em 0;
+  font-style: italic;
+  text-align: center;
+}
+
+#nosotros .row .right-box p {
+  font-family: var(--lobster-two);
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: initial;
+  color: var(--gray);
+  margin-bottom: 0.75em;
+}
+
+#nosotros .row .right-box p span {
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+#nosotros .row .right-box ul {
+  padding-top: 0.8em;
+}
+
+#nosotros .row .right-box ul li {
+  font-size: 0.85em;
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 0.65em;
+}
+
+#nosotros .row .right-box ul li i {
+  padding-right: 0.35em;
+  color: var(--orange);
+}
+
+@media only screen and (min-width: 720px) {
+  #nosotros .row {
+    flex-direction: row;
+  }
+
+  #nosotros .row .left-box-image {
+    height: 25em;
+  }
+}
+
+/*galeria*/
+#galeria {
+  background-color: var(--black);
+}
+#galeria .tile {
+  color: #f5f5f5;
+}
+
+#galeria .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  padding: 2em 1.5em;
+}
+
+#galeria .row .image {
+  height: 18em;
+  flex: 1 1 20em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#galeria .row .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#galeria .row .image:hover img {
+  transform: scale(1.2);
+  transition: 0.25s ease-in-out;
+}
+
+/* precios */
+
+#precios {
+  background-color: #f5f5f5;
+  padding-bottom: 2.5em;
+}
+
+#precios .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  gap: 2em;
+  padding: 1.5em 2em;
+}
+
+#precios .row .price-box {
+  padding: 2em;
+  border: 0.2em solid var(--blue);
+  border-radius: 0.5em;
+}
+
+#precios .row .price-box h4 {
+  padding: 0.5em;
+  color: var(--blue);
+}
+
+#precios .row .price-box h3 {
+  font-size: 1.2em;
+  padding: 0.8em 0;
+}
+
+#precios .row .price-box h3 span {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0 0.2em;
+}
+
+#precios .row .price-box p {
+  font-weight: 800;
+  font-size: large;
+  color: var(--gray);
+  letter-spacing: 0.12em;
+}
+
+#precios .row .price-box .activities {
+  margin: 0.5em 0;
+}
+
+#precios .row .price-box .activities li {
+  font-family: var(--lobster-two);
+  font-size: 1.25em;
+  padding-top: 0.35em;
+}
+
+#precios .row .price-box .activities li i {
+  padding-right: 0.35em;
+  font-weight: 700;
+}
+
+#precios .row .price-box .activities li i.fa-circle-check {
+  color: green;
+}
+
+#precios .row .price-box .activities li i.fa-circle-xmark {
+  color: red;
+}
+
+/* equipo */
+#equipo {
+  background: linear-gradient(0, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/gimnasio.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 1em;
+}
+#equipo .title {
+  color: #f5f5f5;
+}
+#equipo .row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  gap: 10px;
+  justify-content: center;
+  padding: 2.8em;
+}
+#equipo .row .box {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#equipo .row .box .image {
+  height: 75%;
+}
+#equipo .row .box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#equipo .row .box .content {
+  padding: 0.8em 0.5em;
+  position: relative;
+  text-align: center;
+}
+#equipo .row .box .content .social-network {
+  position: absolute;
+  top: -3em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+#equipo .row .box .content .social-network i {
+  font-size: x-large;
+  color: var(--orange);
+  background-color: var(--black);
+  padding: 0.2em;
+  border-radius: 10px;
+}
+
+#equipo .row .box .content h3 {
+  padding: 0.5em 0;
+  font-size: large;
+  font-style: italic;
+}
+
+#equipo .row .box .content h4 {
+  width: 100%;
+  font-size: large;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+@media only screen and (min-width: 790px) {
+  #equipo .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #equipo .row .box .content .social-network i {
+    font-size: 1.25em;
+  }
+}
+
+/* CONTACTO */
+#contacto {
+  padding: 4em 2em;
+  background: linear-gradient(var(--blue));
+  color: #fff;
+}
+
+#contacto .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ---- Novedades ---- */
+#contacto .box-left h3 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #fff; /* ← blanco */
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#contacto .box-left h3 i {
+  font-size: 1.3em;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 0.4em;
+}
+
+#contacto .box-left form {
+  display: flex;
+  overflow: hidden;
+  border-radius: 0.5em;
+  background-color: #ffffff;
+  box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  max-width: 450px;
+}
+
+#contacto .box-left form:hover {
+  transform: scale(1.02);
+}
+
+#contacto .box-left form input {
+  flex: 1;
+  border: none;
+  padding: 0.8em 1em;
+  font-size: 1em;
+  outline: none;
+  color: #333;
+}
+
+#contacto .box-left form button {
+  background-color: #f76b5c;
+  color: #fff;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#contacto .box-left form button:hover {
+  background-color: #ff8c75;
+  transform: scale(1.05);
+}
+
+/* ---- Contáctanos ---- */
+#contacto .box-right {
+  text-align: left;
+}
+
+#contacto .box-right h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.8em;
+  margin-bottom: 0.4em;
+  line-height: 1;
+  color: #fff;
+}
+
+#contacto .box-right h4 {
+  font-size: 1.1em;
+  color: #fff;
+  margin: 0.25em 0;
+}
+
+#contacto .box-right p {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0.4em 0;
+  color: #fff;
+}
+
+#contacto .box-right i {
+  margin-right: 0.3em;
+  color: #f76b5c;
+}
+
+@media (min-width: 720px) {
+  #contacto .row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #contacto .box-left {
+    flex: 1 1 45%;
+  }
+
+  #contacto .box-right {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ← centra verticalmente */
+    align-items: flex-start; /* ← alinea los textos */
+  }
+}
+
+/*footer */
+footer {
+  background-color: var(--black);
+  height: 3em;
+}
+
+footer .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+footer .container p {
+  font-size: 0.85em;
+}
+/* Estilos para formularios de registro */
+.registration-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--blue);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 175, 185, 0.3);
+}
+
+.plan-summary {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--blue);
+}
+
+.plan-summary h3 {
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+
+.plan-summary p {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Botones pequeños para admin */
+.btn-small {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Responsive para tablas */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.8rem;
+    }
+    th, td {
+        padding: 0.4rem;
+    }
+}

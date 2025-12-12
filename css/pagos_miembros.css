@@ -1,0 +1,395 @@
+
+/* Variables CSS para admin */
+:root {
+    --admin-primary: #00afb9;
+    --admin-success: #28a745;
+    --admin-danger: #dc3545;
+    --admin-warning: #ffc107;
+    --admin-info: #17a2b8;
+    --admin-light: #f8f9fa;
+    --admin-dark: #343a40;
+    --admin-border: #dee2e6;
+    --admin-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos base para admin */
+.admin-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 1rem; 
+}
+
+.admin-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--admin-primary);
+}
+
+.admin-title {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Tabla responsiva */
+.table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--admin-shadow);
+    background: white;
+}
+
+.admin-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    min-width: 900px;
+    font-size: 0.9rem;
+}
+
+.admin-table th, 
+.admin-table td { 
+    padding: 1rem; 
+    text-align: left; 
+    border-bottom: 1px solid var(--admin-border);
+    vertical-align: middle;
+}
+
+.admin-table th {
+    background-color: var(--admin-light);
+    font-weight: 700;
+    color: var(--admin-dark);
+    position: sticky;
+    top: 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Estados */
+.estado-aprobado,
+.estado-activo { 
+    color: var(--admin-success); 
+    font-weight: bold; 
+}
+
+.estado-pendiente,
+.estado-inactivo { 
+    color: var(--admin-warning); 
+    font-weight: bold; 
+}
+
+.estado-rechazado,
+.estado-suspendido { 
+    color: var(--admin-danger); 
+    font-weight: bold; 
+}
+
+/* Badges para estados */
+.estado-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;
+}
+
+.estado-aprobado-badge,
+.estado-activo-badge {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.estado-pendiente-badge,
+.estado-inactivo-badge {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.estado-rechazado-badge,
+.estado-suspendido-badge {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Botones */
+.btn-small { 
+    padding: 0.5rem 0.8rem; 
+    font-size: 0.75rem; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    display: inline-block; 
+    margin: 0.1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.btn-success { 
+    background: var(--admin-success); 
+    color: white; 
+}
+.btn-success:hover { 
+    background: #218838; 
+    transform: translateY(-2px); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-danger { 
+    background: var(--admin-danger); 
+    color: white; 
+}
+.btn-danger:hover { 
+    background: #c82333; 
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-info { 
+    background: var(--admin-info); 
+    color: white; 
+}
+.btn-info:hover { 
+    background: #138496; 
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-warning { 
+    background: var(--admin-warning); 
+    color: black; 
+}
+.btn-warning:hover { 
+    background: #e0a800; 
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background: var(--admin-primary);
+    color: white;
+}
+.btn-primary:hover {
+    background: #0099a8;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Contenedor de botones para mejor responsive */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* Mensajes de éxito/error */
+.admin-success { 
+    background: #d4edda; 
+    color: #155724; 
+    padding: 1rem; 
+    border-radius: 5px; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid #c3e6cb;
+    font-weight: 500;
+}
+
+.admin-error { 
+    background: #f8d7da; 
+    color: #721c24; 
+    padding: 1rem; 
+    border-radius: 5px; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid #f5c6cb;
+    font-weight: 500;
+}
+
+.admin-warning { 
+    background: #fff3cd; 
+    color: #856404; 
+    padding: 1rem; 
+    border-radius: 5px; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid #ffeaa7;
+    font-weight: 500;
+}
+
+/* Enlaces */
+.admin-back-link {
+    margin-bottom: 1.5rem; 
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--admin-primary);
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    border: 2px solid var(--admin-primary);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+}
+
+.admin-back-link:hover {
+    background-color: var(--admin-primary);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 175, 185, 0.3);
+}
+
+/* Celdas con mejor formato */
+.email-cell {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.telefono-cell {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #495057;
+}
+
+.monto-cell {
+    font-weight: 700;
+    color: var(--admin-success);
+    font-size: 1rem;
+}
+
+.nombre-cell {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Alternar colores de filas para mejor legibilidad */
+.admin-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #e9f7f9;
+    transition: background-color 0.2s ease;
+}
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+    .admin-container {
+        padding: 0.8rem;
+    }
+    
+    .admin-table th, 
+    .admin-table td {
+        padding: 0.8rem;
+    }
+    
+    .btn-small {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 0.5rem;
+    }
+    
+    .admin-title {
+        font-size: 1.5rem;
+    }
+    
+    .admin-table th, 
+    .admin-table td {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .btn-small {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.65rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .email-cell {
+        max-width: 120px;
+    }
+    
+    .estado-badge {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        min-width: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-table th, 
+    .admin-table td {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .btn-small {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.6rem;
+    }
+    
+    .email-cell {
+        max-width: 100px;
+    }
+    
+    .admin-back-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Utilidades */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-bold { font-weight: bold; }
+.text-muted { color: #6c757d; }
+
+/* Cards para dashboard */
+.admin-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px var(--admin-shadow);
+    border: 1px solid var(--admin-border);
+    margin-bottom: 1.5rem;
+}
+
+.admin-card-header {
+    border-bottom: 1px solid var(--admin-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.admin-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--admin-dark);
+    margin: 0;
+}
